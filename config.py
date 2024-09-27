@@ -12,14 +12,25 @@ API_HASH = getenv("API_HASH")
 
 # Get your token from @BotFather on Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_USERNAME = ""
+BOT_ID = ""
+BOT_NAME = ""
+owner_username = ""
 
+WORKERS = 8
+TIME_ZONE = 'Asia/Kolkata'
+BDB_URI = "cloud.mongodb.com"
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+MONGO_DB_NAME = getenv("MONGO_DB_NAME", "cluster0")
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
 
 # Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID", None))
+LOGGER_ID = int(getenv("LOGGER_ID", -1002189710396))
+
+PREFIX_HANDLER = "/"
+NO_LOAD = []
 
 # Get this value from @FallenxBot on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID", 1356469075))
@@ -59,8 +70,8 @@ PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 25))
 TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", 104857600))
 TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 1073741824))
 # Checkout https://www.gbmb.org/mb-to-bytes for converting mb to bytes
-
-
+LOG_GROUP_ID= getenv("LOG_GROUP_ID", "-1002189710396")
+GROUP_USERNAME = getenv("GROUP_USERNAME", "sjjssuau")
 # Get your pyrogram v2 session from @StringFatherBot on Telegram
 STRING1 = getenv("STRING_SESSION", None)
 STRING2 = getenv("STRING_SESSION2", None)
@@ -69,13 +80,17 @@ STRING4 = getenv("STRING_SESSION4", None)
 STRING5 = getenv("STRING_SESSION5", None)
 
 
+RMBG_API = ""
+AuDD_API = ""
+GENIUS_API_TOKEN = ""
+
 BANNED_USERS = filters.user()
 adminlist = {}
 lyrical = {}
 votemode = {}
 autoclean = []
 confirmer = {}
-
+COMMAND_HANDLER = getenv("COMMAND_HANDLER", "! /").split()
 
 START_IMG_URL = getenv(
     "START_IMG_URL", "https://te.legra.ph/file/25efe6aa029c6baea73ea.jpg"
@@ -114,3 +129,12 @@ if SUPPORT_CHAT:
         raise SystemExit(
             "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
         )
+
+defult_dev = [6734300703, 1432756163, 5294360309] + [int(OWNER_ID)]
+
+Defult_dev = set(defult_dev)
+
+DEVS = Defult_dev
+DEV_USERS = list(DEVS)
+SUDO_USERS = []
+WHITELIST_USERS = []

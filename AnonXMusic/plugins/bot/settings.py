@@ -1,3 +1,4 @@
+import config
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.errors import MessageNotModified
@@ -8,6 +9,8 @@ from pyrogram.types import (
     Message,
 )
 
+from random import choice
+from AnonXMusic.utils.extras import StartPic
 from AnonXMusic import app
 from AnonXMusic.utils.database import (
     add_nonadmin_chat,
@@ -79,7 +82,7 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
         OWNER = OWNER_ID
         buttons = private_panel(_)
         return await CallbackQuery.edit_message_text(
-            _["start_2"].format(CallbackQuery.from_user.mention, app.mention),
+            _["start_2"].format(CallbackQuery.from_user.mention, app.mention,str(choice(StartPic))),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
